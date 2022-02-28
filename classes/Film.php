@@ -10,9 +10,9 @@
             $this->cast = $_cast;
         
         }
-        public function getInfo(){
-            return "{$this->name} {$this->genre} {$this->cast} ";
-        }
+        // public function getInfo(){
+        //     return "{$this->name} {$this->genre} {$this->cast} ";
+        // }
 
         
         

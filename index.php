@@ -5,13 +5,29 @@ Attenzione, esistono due tipi di sala, quella normale e quella con poltrone imme
 <?php
 require_once __DIR__.'/classes/Hall.php';
 require_once __DIR__.'/classes/Film.php';
+require_once __DIR__.'/classes/Show.php';
+require_once __DIR__.'/classes/Hall4D.php';
 
-$cenima = new Hall("5");
-$cenima-> film = new Film("Fantastic Beasts","Fantasy/Adventure","Eddie Reedmayne, Johnny Depp, Kattherine Waterston");
-var_dump($cenima);
-//     new Hall("Harry Potter and the Chamber of Secrets","Fantasy/Adventure","Dan Radcliffe, Emma Watson, Rupert Grint"),
-//     new Hall("Spider-Man: No Way Home","Action/Adventure","Tom Holland, Tobey Maguire, Zendaya"),
-// ];
+$movie =[new Film("Fantastic Beasts","Fantasy/Adventure","Eddie Reedmayne, Johnny Depp, Kattherine Waterston"),
+        new Film("Harry Potter and the Chamber of Secrets","Fantasy/Adventure","Dan Radcliffe, Emma Watson, Rupert Grint"),
+        new Film("Spider-Man: No Way Home","Action/Adventure","Tom Holland, Tobey Maguire, Zendaya")
+]; 
+var_dump($movie);
+$halls =[new Hall("1","Mars","40" ),
+        new Hall("2", "Venus","55"),
+        new Hall("3", "Uranus","120"),
+        new Hall("4","Saturn", "180"),
+        new Hall4D("5","Jupiter","200", ["motion graphics, modeling, texturing"] )
+];
+var_dump($halls);
+$shows =[new Show("10:00", "22.02.2022", $halls[0], $movie[0]),
+         new Show("10:00", "22.02.2022", $halls[1], $movie[1]),
+         new Show("10:00", "22.02.2022", $halls[2], $movie[2]),
+         new Show("10:00", "22.02.2022", $halls[3], $movie[3])
+];
+var_dump($shows);
+
+
 
 
 ?>
@@ -25,14 +41,7 @@ var_dump($cenima);
     <title>Document</title>
 </head>
 <body>
-    <ul>
-        <?php
-        foreach($cenima as $element){
-            echo "<li>{$element-> getInfo()}</li>";
-        }
-       
-        ?>
-    </ul>
+   
     
 </body>
 </html>
