@@ -25,13 +25,19 @@ var_dump($shows);
 $actorsList= [
     new actor("Eddie", "Redmayne",1982),
     new actor("Johnny", "Depp",1963),
-    new actor("Kattherine", "Waterston",1963),
+    new actor("Katherine", "Waterston",1980),
+    new actor("Dan", "Radcliffe",1989),
+    new actor("Emma", "Watson",1990),
+    new actor("Rupert", "Grint",1988),
+    new actor("Tom", "Holland",1996),
+    new actor("Tobey", "Maguire",1975),
+    new actor("Zendaya", "Maree",1996),
 
 ];
 
 $movie =[new Film("Fantastic Beasts","2h 14m","Fantasy/Adventure",[ $actorsList[0], $actorsList[1], $actorsList[2]]),
-        new Film("Harry Potter and the Chamber of Secrets", "02h 32m",["Fantasy/Adventure","Dan Radcliffe, Emma Watson, Rupert Grint"]),
-        new Film("Spider-Man: No Way Home","02h 28m","Action/Adventure",["Tom Holland, Tobey Maguire, Zendaya"])
+        new Film("Harry Potter and the Chamber of Secrets", "02h 32m","Fantasy/Adventure",[$actorsList[3], $actorsList[4], $actorsList[5]]),
+        new Film("Spider-Man: No Way Home","02h 28m","Action/Adventure",[ $actorsList[5], $actorsList[6], $actorsList[7]])
 ]; 
 var_dump($movie, $actorsList);
 
