@@ -8,6 +8,14 @@
             $this->name =  $_name;
             $this->capacity =  $_capacity;
         }
+
+        public function getNumberOFHalls(){
+            return "{$this->capacity}";
+        }
+
+        public function setCapacity($_capacity){
+            $this-> capacity = $_capacity;
+        }
        
 
         

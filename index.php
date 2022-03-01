@@ -19,27 +19,48 @@ var_dump($halls);
 $shows =[new Show("10:00", "22.02.2022", $halls[0], $movie[0]),
          new Show("10:00", "22.02.2022", $halls[1], $movie[1]),
          new Show("10:00", "22.02.2022", $halls[2], $movie[2]),
-         new Show("10:00", "22.02.2022", $halls[3], $movie[3])
+         new Show("10:00", "22.02.2022", $halls[3], $movie[3]),
+         new Show("10:00", "23.02.2022", $halls[0], $movie[0]),
+         new Show("10:00", "23.02.2022", $halls[1], $movie[1]),
+         new Show("10:00", "23.02.2022", $halls[2], $movie[2]),
+         new Show("10:00", "23.02.2022", $halls[3], $movie[3]),
+         new Show("10:00", "24.02.2022", $halls[0], $movie[0]),
+         new Show("10:00", "24.02.2022", $halls[1], $movie[1]),
+         new Show("10:00", "24.02.2022", $halls[2], $movie[2]),
+         new Show("10:00", "24.02.2022", $halls[3], $movie[3])
 ];
 var_dump($shows);
 $actorsList= [
-    new actor("Eddie", "Redmayne",1982),
-    new actor("Johnny", "Depp",1963),
-    new actor("Katherine", "Waterston",1980),
-    new actor("Dan", "Radcliffe",1989),
-    new actor("Emma", "Watson",1990),
-    new actor("Rupert", "Grint",1988),
-    new actor("Tom", "Holland",1996),
-    new actor("Tobey", "Maguire",1975),
-    new actor("Zendaya", "Maree",1996),
+    new Actor("Eddie", "Redmayne",1982),
+    new Actor("Johnny", "Depp",1963),
+    new Actor("Katherine", "Waterston",1980),
+    new Actor("Dan", "Radcliffe",1989),
+    new Actor("Emma", "Watson",1990),
+    new Actor("Rupert", "Grint",1988),
+    new Actor("Tom", "Holland",1996),
+    new Actor("Tobey", "Maguire",1975),
+    new Actor("Zendaya", "Maree",1996),
 
 ];
+
 
 $movie =[new Film("Fantastic Beasts","2h 14m","Fantasy/Adventure",[ $actorsList[0], $actorsList[1], $actorsList[2]]),
         new Film("Harry Potter and the Chamber of Secrets", "02h 32m","Fantasy/Adventure",[$actorsList[3], $actorsList[4], $actorsList[5]]),
         new Film("Spider-Man: No Way Home","02h 28m","Action/Adventure",[ $actorsList[5], $actorsList[6], $actorsList[7]])
 ]; 
 var_dump($movie, $actorsList);
+
+$total = null;
+foreach ($halls as $element){
+    $total += $element-> getNumberOFHalls();
+}
+    
+    var_dump("capacity(total number)=$total");
+
+
+
+
+
 
 
 
@@ -55,6 +76,7 @@ var_dump($movie, $actorsList);
     <title>Document</title>
 </head>
 <body>
+
    
     
 </body>
