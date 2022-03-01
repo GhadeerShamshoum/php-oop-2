@@ -7,12 +7,8 @@ require_once __DIR__.'/classes/Hall.php';
 require_once __DIR__.'/classes/Film.php';
 require_once __DIR__.'/classes/Show.php';
 require_once __DIR__.'/classes/Hall4D.php';
+require_once __DIR__.'/classes/Actor.php';
 
-$movie =[new Film("Fantastic Beasts","Fantasy/Adventure","Eddie Reedmayne, Johnny Depp, Kattherine Waterston"),
-        new Film("Harry Potter and the Chamber of Secrets","Fantasy/Adventure","Dan Radcliffe, Emma Watson, Rupert Grint"),
-        new Film("Spider-Man: No Way Home","Action/Adventure","Tom Holland, Tobey Maguire, Zendaya")
-]; 
-var_dump($movie);
 $halls =[new Hall("1","Mars","40" ),
         new Hall("2", "Venus","55"),
         new Hall("3", "Uranus","120"),
@@ -26,6 +22,18 @@ $shows =[new Show("10:00", "22.02.2022", $halls[0], $movie[0]),
          new Show("10:00", "22.02.2022", $halls[3], $movie[3])
 ];
 var_dump($shows);
+$actorsList= [
+    new actor("Eddie", "Redmayne",1982),
+    new actor("Johnny", "Depp",1963),
+    new actor("Kattherine", "Waterston",1963),
+
+];
+
+$movie =[new Film("Fantastic Beasts","2h 14m","Fantasy/Adventure",[ $actorsList[0], $actorsList[1], $actorsList[2]]),
+        new Film("Harry Potter and the Chamber of Secrets", "02h 32m",["Fantasy/Adventure","Dan Radcliffe, Emma Watson, Rupert Grint"]),
+        new Film("Spider-Man: No Way Home","02h 28m","Action/Adventure",["Tom Holland, Tobey Maguire, Zendaya"])
+]; 
+var_dump($movie, $actorsList);
 
 
 
