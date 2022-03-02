@@ -22,7 +22,7 @@ $halls =[new Hall("1","Mars","40" ),
         new Hall("4","Saturn", "180"),
         new Hall4D("5","Jupiter","200", ["motion graphics, modeling, texturing"] )
 ];
-// var_dump($halls);
+
 $actorsList= [
     new Actor("Eddie", "Redmayne",1982),
     new Actor("Johnny", "Depp",1963),
@@ -43,7 +43,7 @@ new Film("Harry Potter and the Chamber of Secrets", "02h 32m","Fantasy/Adventure
 new Film("Spider-Man: No Way Home","02h 28m","Action/Adventure",[ $actorsList[5], $actorsList[6], $actorsList[7]])
 ]; 
 
-// var_dump($movie, $actorsList);
+
 
 $shows =[new Show("10:00", "22.02.2022", $halls[0], $movie[0]),
          new Show("10:00", "22.02.2022", $halls[1], $movie[1]),
@@ -83,6 +83,31 @@ foreach($shows as $element){
 var_dump("number of shows 24-02-2022(fantastic beasts):$count");
     
 //4) Stabilito un giorno, recupera l’orario di fine dell’ultimo spettacolo.
+foreach($shows as $element){
+    $start="";
+    if(($element->getData() == $dateChoice) && $element->getTime() > $start ){
+        $start=$element->getTime();
+    } 
+}
+
+var_dump("last movie on".$element->getData());
+var_dump("time:".$element->getTime());
+
+// $indexLastShow=null;
+// foreach($shows as $index=>$element){
+//     $start="";
+//     if(($element->getData() == $dateChoice) && $element->getTime() > $start ){
+//         $start=$element->getTime();
+//         $indexLastShow= $index;
+//         echo $shows[$indexLastShow]->getTime()." + ".$shows[$indexLastShow]->getFilm()->duration;
+//     } 
+// }
+
+// if (!is_null($indexLastShow)){
+//     var_dump("last movie on".$element->getData());
+//     var_dump("last movie on".$element->getTime());
+// }
+  
 
 ?>
 

@@ -1,14 +1,26 @@
 <?php
  class Show {
     protected $time;
-    protected $date;
+    private $date;
     protected $hall;
-    protected $film;
-    public function __construct($_time, $_date,$_hall, $_film){
+    protected $movie;
+    public function __construct($_time, $_date,$_hall, $_movie){
         $this->time = $_time;
         $this->date = $_date;
         $this->hall = $_hall;
-        $this->film = $_film;
+        $this->movie = $_movie;
     
     }
+
+
+    public function getData(){
+        return $this->date;
+     }
+ 
+     public function getFilm(){
+        return $this->movie;
+     }
+     public function getTime(){
+        return $this->time;
+     }
  }
